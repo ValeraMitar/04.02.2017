@@ -33,14 +33,120 @@ body {
 }
 
 .white {
-	background: rgba(241, 25, 222, 1);
+	background: rgb(255, 255, 255);
 	width: 100%;
 }
 
 .red {
-	max-width: 200px;
-	min-width: 200px;
+	width: 200px;
 	flex-grow: 0;
 	flex-shrink: 0;
 	background: rgba(233, 62, 48, 1);
+}
+/*делаю меню*/
+
+.menu {
+	width: 200px;
+	margin: 10vh auto 0;
+	padding: 0;
+	font-size: 0;
+	position: fixed;
+	z-index: 500;
+}
+.menu li {
+	list-style-type: none;
+	/*border: 1px solid #000;*/
+	background: #000;
+	font-size: 14pt;
+}
+.menu ul {
+	padding: 0;
+	}
+
+.menu > li {
+	display:inline-block; 
+	width: 200px;/*задаю ширину блока ли*/
+	padding-left: 10px;
+	box-sizing: border-box;
+}
+.menu li > a {
+	text-decoration: none;
+	display: block;/*делаю для того чтобы при навдении на блок все тело работало как ссылка*/
+	color: #fff;
+	line-height: 50px;
+	width: 100%;/*делаю для того чтобы блок ссылки занимал все пространствоблока ли*/
+}
+.menu li ul li {
+	padding-left: 10px;
+}
+.menu li > ul {
+	display: none;/*делаю так чтобы выпадающее меню было скрвто от глаз*/
+	text-align: left;
+	width: 100%;
+}
+.menu a:hover {
+	background:#e24486;/*когда я навожу мышку что я вижу*/
+	color:#000;
+}
+/*выпадающее меню*/
+.menu li:hover {
+	position: relative;/*делает так чтобы выпадающая строка считалась дочерней для своего подпункта*/
+	background: #e24486;
+
+}
+.menu li:hover > a {
+	color:#000;/*делаю так чтобы после того кака я пошел на список ниже в меню все еще оставался цвет черный*/
+
+}
+.menu li:hover > ul {
+	display: block;/*делаю так чтобы при наведениии на пункт открывались его подпункты в других случаях ничего не происходит*/
+	position: absolute;/*делаем для того чтобы всплывающие окна накладывались на таблицу, т.е. отображались поверх всего на веб-странице*/
+	left:  100%;
+	top: 0;
+}
+/*второй и последующий уровни вложенности*/
+
+.menu li:hover ul li ul {
+	position: absolute;/*позволяет нам позиционировать напротив выпадающую строку*/
+	left:  100%;
+	top: 0;
+}
+/*content для центрального белого блока*/
+#gallery::after {
+	content: "";
+	width: 100%;
+	height: 0;
+	display: inline-block;
+}
+#gallery {
+	width: 100%;/*ne moe*/
+	margin: 10vh auto 0;/*ne moe*/
+	text-align: justify;
+	font-size: 0;/*ne moe*//*весь текст в галлари не отображается */
+	z-index: 1;
+}
+#gallery > div {
+	display: inline-block;
+	position: relative;
+    width: 30%;
+    margin-bottom: 50px;/*ne moe*/
+    border: 2px solid #fff;/*ne moe*/
+}
+#gallery > div img {
+    width: 100%;
+}
+#gallery > div:hover::after {
+	content: attr(data-title); /* Выводим текст */
+    position: absolute; /* Абсолютное позиционирование */
+    width: 100%;
+    left: 0; /* Положение подсказки */
+	bottom: 0; /* Положение подсказки */
+    background: rgba(0,42,167,0.6); /* Полупрозрачный цвет фона */
+    color: #fff; /* Цвет текста */
+    text-align: center; /* Выравнивание текста по центру */
+    font-family: Arial, sans-serif; /* Гарнитура шрифта */
+    font-size: 15pt; /*Размер текста подсказки*/ 
+    padding: 5px;  /*Поля*/ 
+    border: 1px solid #333; /* Параметры рамки */
+    box-sizing: border-box;
 }
