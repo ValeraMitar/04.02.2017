@@ -1,0 +1,46 @@
+body {
+	min-height: 100vh;
+	display: flex;
+	margin: 0;
+}
+ .others {
+ 	display: flex;
+ 	flex-direction: column;
+ 	width: 100%;
+ 	
+ }
+.yellow {
+	max-width: 200px;
+	min-width: 200px;
+	background: rgba(253, 210, 10, 1);
+}
+
+.blue {
+	max-height: 200px;
+	min-height: 200px;
+	background: rgba(55, 126, 240, 1);
+}
+
+.green {
+	max-height: 200px;
+	min-height: 200px;
+	background: rgba(82, 181, 41, 1);
+}
+
+.colomn {
+	display: flex;
+	flex-grow: 1;
+}
+
+.white {
+	background: rgba(241, 25, 222, 1);
+	width: 100%;
+}
+
+.red {
+	max-width: 200px;
+	min-width: 200px;
+	flex-grow: 0;
+	flex-shrink: 0;
+	background: rgba(233, 62, 48, 1);
+}
